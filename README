@@ -1,0 +1,10 @@
+= Rbac Snippets
+
+Builds on RBAC Base to allow only users in the "Snippets" role to
+edit snippets. If you do not have RbacBaseExtension installed, it will
+raise a RbacSnippetsExtension::MissingRequirement exception when
+activated.
+
+See http://ext.radiantcms.org/extensions/87-rbac-base
+
+Built by Saturn Flyer http://www.saturnflyer.com
