@@ -9,8 +9,6 @@ class RbacSnippetsExtension < Radiant::Extension
   class MissingRequirement < StandardError; end
   
   def activate
-    raise RbacSnippetsExtension::MissingRequirement.new('RbacBaseExtension must be installed and loaded first.') unless defined?(RbacBaseExtension)
-    admin.tabs["Snippets"].visibility = [:snippets]
     Admin::SnippetsController.class_eval {
       only_allow_access_to(:index, :new, :edit, :update, :create, :destroy,
         :when => :snippets,
@@ -20,7 +18,6 @@ class RbacSnippetsExtension < Radiant::Extension
   end
   
   def deactivate
-    # admin.tabs.remove "Rbac Snippets"
   end
   
 end
